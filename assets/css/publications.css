@@ -1,0 +1,147 @@
+/* General Body Styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body[data-theme="light"] {
+    background-color: #f8f9fa;
+    color: #212529;
+  }
+  
+  body[data-theme="dark"] {
+    background-color: #121212;
+    color: #e0e0e0;
+  }
+  
+  /* Page Title Styling */
+  h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  body[data-theme="light"] h1 {
+    color: #000000;
+  }
+  
+  body[data-theme="dark"] h1 {
+    color: #ffffff;
+  }
+  
+  /* Publication Card Styling */
+  .publication-card {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 30px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  body[data-theme="dark"] .publication-card {
+    background-color: #1e1e1e;
+    border: 1px solid #555;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.5);
+  }
+  
+  .publication-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.15);
+  }
+  
+  body[data-theme="dark"] .publication-card:hover {
+    box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.5);
+  }
+  
+  /* Publication Content Styling */
+  .publication-card .content {
+    margin-bottom: 15px; /* Ensures some spacing after the content */
+  }
+  
+  .publication-card h3 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 0;
+  }
+  
+  body[data-theme="light"] .publication-card h3 {
+    color: #000000;
+  }
+  
+  body[data-theme="dark"] .publication-card h3 {
+    color: #ffffff;
+  }
+  
+  .publication-card .conference {
+    font-size: 1rem;
+    font-style: italic;
+    color: #555555;
+    margin: 5px 0 10px 0;
+  }
+  
+  body[data-theme="dark"] .publication-card .conference {
+    color: #aaaaaa;
+  }
+  
+  .publication-card .description {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin: 0;
+  }
+  
+  body[data-theme="dark"] .publication-card .description {
+    color: #cccccc;
+  }
+  
+  /* Button Row */
+  .action-row {
+    display: flex;
+    justify-content: space-between; /* Space out buttons and align download to right */
+    align-items: center;
+    margin-top: 15px;
+  }
+  
+  .publication-card .btn-primary {
+    background-color: #6c757d;
+    color: #ffffff;
+    border: none;
+    font-size: 0.9rem;
+    padding: 10px 15px;
+    transition: background-color 0.3s ease;
+  }
+  
+  body[data-theme="dark"] .btn-primary {
+    background-color: #007bff;
+  }
+  
+  .publication-card .btn-primary:hover {
+    background-color: #555555;
+  }
+  
+  body[data-theme="dark"] .btn-primary:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Download Button Styling */
+  .icon-container a {
+    font-size: 1.5rem; /* Icon size */
+    color: #000000; /* Black for light mode */
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  body[data-theme="dark"] .icon-container a {
+    color: #d3d3d3; /* Light grey for dark mode */
+  }
+  
+  .icon-container a:hover {
+    color: #555555; /* Lighter black on hover */
+  }
+  
+  body[data-theme="dark"] .icon-container a:hover {
+    color: #ffffff; /* White for dark mode */
+  }
+  

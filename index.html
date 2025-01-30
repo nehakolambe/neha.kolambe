@@ -2,562 +2,115 @@
 <html lang="en">
 
 <head>
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
-
-  <title>Neha Kolambe</title>
-  <meta content="" name="description">
-  <meta content="" name="keywords">
-
-  <!-- Favicons -->
-  <link href="assets/img/favicon.png" rel="icon">
-  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
-
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
-
-  <!-- Vendor CSS Files -->
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
-  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-
-  <!-- Template Main CSS File -->
-  <link href="assets/css/style.css" rel="stylesheet">
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Neha Kolambe</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/index.css">
 </head>
 
-<body>
+<body data-theme="light">
+    <div class="wrapper">
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#about" data-section="about">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#skills" data-section="skills">What I'm good at</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#work" data-section="work">My Work</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#publications" data-section="publications">Publications</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#projects" data-section="projects">Projects</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="assets/resume/Neha_Kolambe_Resume.pdf" target="_self">Resume</a>
+                        </li> 
+                        <!-- <li class="nav-item">
+                            <a class="nav-link" href="papers/Detection_of_mental_disorder_on_social_platform.pdf" target="_self">CV</a>
+                        </li>                         -->
+                        <li class="nav-item">
+                            <button id="themeSwitcher" class="theme-icon nav-link">
+                                <i id="themeIcon" class="fas fa-moon"></i>
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
 
-  <!-- ======= Header ======= -->
-  <header id="header">
-    <div class="container">
+        <!-- Content -->
+        <div class="container content" id="content">
+            <!-- Dynamic content will be loaded here -->
+        </div>
 
-      <h1><a href="index.html">Neha Kolambe</a></h1>
-      <h2>I'm an Upcoming <span>MSCS Student</span> at University of Colorado, Boulder</h2>
-
-      <nav id="navbar" class="navbar">
-        <ul>
-          <li><a class="nav-link active" href="#header">Home</a></li>
-          <li><a class="nav-link" href="#about">About</a></li>
-          <li><a class="nav-link" href="#project">Projects</a></li>
-          <li><a class="nav-link" href="#resume">Resume</a></li>
-          <li><a class="nav-link" href="#contact">Contact</a></li>
-        </ul>
-        <i class="bi bi-list mobile-nav-toggle"></i>
-      </nav><!-- .navbar -->
-
-      <div class="social-links">
-        <a href="mailto: kolambe.neha36@gmail.com" target="_blank" class="envelope"><i class="bi bi-envelope"></i></a>
-        <a href="https://www.linkedin.com/in/nehakolambe/" target="_blank" class="linkedin"><i class="bi bi-linkedin"></i></a>
-        <a href="https://github.com/nehakolambe" target="_blank" class="github"><i class="bi bi-github"></i></a>
-      </div>
-
+        <!-- Footer -->
+        <footer>
+            &copy; Copyright 2025 Neha Kolambe. Last updated: January 30, 2025.
+        </footer>
     </div>
-  </header><!-- End Header -->
 
-  <!-- ======= About Section ======= -->
-  <section id="about" class="about">
+    <!-- Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        const themeSwitcher = document.getElementById('themeSwitcher');
+        const themeIcon = document.getElementById('themeIcon');
+        const body = document.body;
 
-    <!-- ======= About Me ======= -->
-    <div class="about-me container">
+        // Theme toggle functionality
+        themeSwitcher.addEventListener('click', () => {
+            const currentTheme = body.getAttribute('data-theme');
+            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+            body.setAttribute('data-theme', newTheme);
+            themeIcon.className = newTheme === 'light' ? 'fas fa-moon' : 'fas fa-sun';
+        });
 
-      <div class="section-title">
-        <h2>About</h2>
-        <p>Learn more about me</p>
-      </div>
+        // Function to load content dynamically
+        async function loadContent(section) {
+            const contentDiv = document.getElementById('content');
+            try {
+                const response = await fetch(`${section}.html`);
+                if (!response.ok) throw new Error('Failed to load section');
+                const html = await response.text();
+                contentDiv.innerHTML = html;
+            } catch (error) {
+                contentDiv.innerHTML = `<p>Error loading content: ${error.message}</p>`;
+            }
+        }
 
-      <div class="row">
-        <div class="col-lg-4" data-aos="fade-right">
-          <img src="assets/img/me.jpg" class="img-fluid" alt="">
-        </div>
-        <div class="col-lg-8 pt-4 pt-lg-0 content" data-aos="fade-left">
-          <h3>MSCS at CU Boulder | Senior Analyst at Deutsche Bank | SPIT IT '22</h3>
-          <p  class="fst-italic">
-            A developer and an explorer
-          </p>
-          <div class="row">
-            <div class="col-lg-7">
-              <ul>
-                <li><i class="bi bi-chevron-right"></i> <strong>Name:</strong> <span>Neha Kolambe</span></li>
-                <li><i class="bi bi-chevron-right"></i> <strong>Phone:</strong> <span>+91 7506838795</span></li>
-                <li><i class="bi bi-chevron-right"></i> <strong>Website:</strong> <span>https://nehakolambe.github.io/neha.kolambe/</span></li>
-              </ul>
-            </div>
-            <div class="col-lg-5">
-              <ul>
-                <li><i class="bi bi-chevron-right"></i> <strong>Degree:</strong> <span>BTech (IT)</span></li>
-                <li><i class="bi bi-chevron-right"></i> <strong>Email:</strong> <span>kolambe.neha36@gmail.com</span></li>
-                <li><i class="bi bi-chevron-right"></i> <strong>City:</strong> <span>Mumbai, IN</span></li>
-              </ul>
-            </div>
-            <p>
-              - Hardworking, determined and focused with a keen eye for details <br>
-              - An enthusiastic and committed team member with leadership qualities <br>
-              - Curious and energetic with a strong foundation in math, logic, and problem-solving skills <br>
-              - Seeking to leverage solid skills in cooperation, communication, and development as a programmer
-            </p>
-          </div>
-        </div>
-      </div>
+        // Load the default section (About)
+        loadContent('about');
 
-    </div><!-- End About Me -->
+        // Handle navigation link clicks
+        const navLinks = document.querySelectorAll('.nav-link[data-section]');
+        navLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const section = link.getAttribute('data-section');
+                loadContent(section);
 
-    <!-- ======= Skills  ======= -->
-    <div class="skills container">
-
-      <div class="section-title">
-        <h2>Skills</h2>
-      </div>
-
-      <div class="row skills-content">
-
-        <div class="col-lg-6">
-
-          <div class="progress">
-            <span class="skill">C <i class="val">55%</i></span>
-            <div class="progress-bar-wrap">
-              <div class="progress-bar" role="progressbar" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100"></div>
-            </div>
-          </div>
-
-          <div class="progress">
-            <span class="skill">Python <i class="val">85%</i></span>
-            <div class="progress-bar-wrap">
-              <div class="progress-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
-            </div>
-          </div>
-
-          <div class="progress">
-            <span class="skill">Java <i class="val">75%</i></span>
-            <div class="progress-bar-wrap">
-              <div class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
-            </div>
-          </div>
-
-          <div class="progress">
-            <span class="skill">SQL <i class="val">75%</i></span>
-            <div class="progress-bar-wrap">
-              <div class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
-            </div>
-          </div>
-
-          <div class="progress">
-            <span class="skill">MYSQL <i class="val">70%</i></span>
-            <div class="progress-bar-wrap">
-              <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
-            </div>
-          </div>
-
-          <div class="progress">
-            <span class="skill">Flask <i class="val">80%</i></span>
-            <div class="progress-bar-wrap">
-              <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
-            </div>
-          </div>
-
-        </div>
-
-        <div class="col-lg-6">
-
-          <div class="progress">
-            <span class="skill">HTML <i class="val">100%</i></span>
-            <div class="progress-bar-wrap">
-              <div class="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
-            </div>
-          </div>
-
-          <div class="progress">
-            <span class="skill">CSS <i class="val">90%</i></span>
-            <div class="progress-bar-wrap">
-              <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
-            </div>
-          </div>
-
-          <div class="progress">
-            <span class="skill">Javascript <i class="val">70%</i></span>
-            <div class="progress-bar-wrap">
-              <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
-            </div>
-          </div>
-
-          <div class="progress">
-            <span class="skill">Bootstrap <i class="val">75%</i></span>
-            <div class="progress-bar-wrap">
-              <div class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
-            </div>
-          </div>
-
-          <div class="progress">
-            <span class="skill">PHP <i class="val">55%</i></span>
-            <div class="progress-bar-wrap">
-              <div class="progress-bar" role="progressbar" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100"></div>
-            </div>
-          </div>
-
-          <div class="progress">
-            <span class="skill">Django <i class="val">55%</i></span>
-            <div class="progress-bar-wrap">
-              <div class="progress-bar" role="progressbar" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100"></div>
-            </div>
-          </div>
-
-        </div>
-
-      </div>
-
-    </div><!-- End Skills -->
-
-
-    <!-- ======= Interests ======= -->
-    <div class="interests container">
-
-      <div class="section-title">
-        <h2>Interests</h2>
-      </div>
-      <!-- https://remixicon.com/ -->
-      <div class="row">
-        <div class="col-lg-3 col-md-4">
-          <div class="icon-box">
-            <i class="ri-code-line" style="color: #ffbb2c;"></i>
-            <h3>Programming</h3>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-4 mt-4 mt-md-0">
-          <div class="icon-box">
-            <i class="ri-game-line" style="color: #5578ff;"></i>
-            <h3>Play</h3>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-4 mt-4 mt-md-0">
-          <div class="icon-box">
-            <i class="ri-music-fill" style="color: #e80368;"></i>
-            <h3>Dance</h3>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-4 mt-4 mt-lg-0">
-          <div class="icon-box">
-            <i class="ri-car-line" style="color: #e361ff;"></i>
-            <h3>Travelling</h3>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-4 mt-4">
-          <div class="icon-box">
-            <i class="ri-macbook-line" style="color: #47aeff;"></i>
-            <h3>Technology</h3>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-4 mt-4">
-          <div class="icon-box">
-            <i class="ri-link"" style="color: #ffa76e;"></i>
-            <h3>Networking</h3>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-4 mt-4">
-          <div class="icon-box">
-            <i class="ri-play-list-line" style="color: #11dbcf;"></i>
-            <h3>Music</h3>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-4 mt-4">
-          <div class="icon-box">
-            <i class="ri-camera-line" style="color: #4233ff;"></i>
-            <h3>Photography</h3>
-          </div>
-        </div>
-        <!-- <div class="col-lg-3 col-md-4 mt-4">
-          <div class="icon-box">
-            <i class="ri-anchor-line" style="color: #b2904f;"></i>
-            <h3>Dirada Pack</h3>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-4 mt-4">
-          <div class="icon-box">
-            <i class="ri-disc-line" style="color: #b20969;"></i>
-            <h3>Moton Ideal</h3>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-4 mt-4">
-          <div class="icon-box">
-            <i class="ri-base-station-line" style="color: #ff5828;"></i>
-            <h3>Verdo Park</h3>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-4 mt-4">
-          <div class="icon-box">
-            <i class="ri-fingerprint-line" style="color: #29cc61;"></i>
-            <h3>Flavor Nivelanda</h3>
-          </div>
-        </div> -->
-      </div>
-
-    </div><!-- End Interests -->
-
-  </section><!-- End About Section -->
-
-  <!-- ======= Resume Section ======= -->
-  <section id="resume" class="resume">
-    <div class="container">
-
-      <div class="section-title">
-        <h2>Resume</h2>
-        <p>Check My Resume</p>
-        <div class="resume-item">
-          <h5><a href="https://www.linkedin.com/in/nehakolambe/" target="_blank">Hire Me</a></h5><p></p>
-          <h5><a href="./assets/files/Neha_Kolambe_Resume.pdf" target="_blank">View Resume</a></h5>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col-lg-6">
-          <h3 class="resume-title">Summary</h3>
-          <div class="resume-item pb-0">
-            <h4>Neha Kolambe</h4>
-            <p><em>
-              - Hardworking, determined and focused with a keen eye for details. <br>
-              - An enthusiastic and committed team member with leadership qualities.
-
-            </em></p>
-            <p>
-            <ul>
-              <li>Mumbai, IN</li>
-              <li>+91 7506838795</li>
-              <li>kolambe.neha36@gmail.com</li>
-            </ul>
-            </p>
-          </div>
-
-          <h3 class="resume-title">Education</h3>
-          <div class="resume-item">
-            <h4>BTech (Information Technology)</h4>
-            <h5>2018 - 2022</h5>
-            <p><em>Sardar Patel Institute of Technology, Mumbai</em></p>
-            <p>CGPA - 9.07 / 10</p>
-          </div>
-          <div class="resume-item">
-            <h4>XII - HSC</h4>
-            <h5>2016 - 2018</h5>
-            <p><em>Smt Sushiladevi Deshmukh Vidyalaya & Jr College, Mumbai</em></p>
-            <p>82.31%</p>
-          </div>
-          <div class="resume-item">
-            <h4>X - SSC</h4>
-            <h5>2006 - 2016</h5>
-            <p><em>Smt Radhikabai Meghe Vidyalaya, Mumbai</em></p>
-            <p>86.40%</p>
-          </div>
-        </div>
-        <div class="col-lg-6">
-          <h3 class="resume-title">Professional Experience</h3>
-          <div class="resume-item">
-            <h4>Web Development and Research Intern</h4>
-            <h5>01/2022 - 07/2022</h5>
-            <p><em>Panel Technologies India Private Limited</em></p>
-            <p>
-            <ul>
-              <li>Building website</li>
-              <li>Work on data and generate meaningful patterns to help make business decisions</li>
-              <li>Gather data, analyze and publish the findings to aid new research</li>
-            </ul>
-            </p>
-          </div>
-          <div class="resume-item">
-            <h4>Web Developer Intern</h4>
-            <h5>10/2020 - 11/2020</h5>
-            <p><em>Panel Technologies India Private Limited</em></p>
-            <p>
-            <ul>
-              <li>Freelance project</li>
-              <li>Started building their official website and designing the frontend</li>
-              <li>Leant about business logistics and client co-ordination</li>
-            </ul>
-            </p>
-          </div>
-
-          <h3 class="resume-title">Committee Experience</h3>
-          <div class="resume-item">
-            <h4>Cultural Committee</h4>
-            <h5>09/19 - 02/20</h5>
-            <p><em>Oculus SPIT, Mumbai</em></p>
-            <p>
-              Dealt with responsibilities, assigned work to the individuals, and guided them on the tasks which they were assigned.
-            </p>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </section><!-- End Resume Section -->
-
-
-  <!-- ======= Project Section ======= -->
-  <section id="project" class="resume">
-    <div class="container">
-
-      <div class="section-title">
-        <h2>Projects</h2>
-        <div class="resume-item">
-          <h5><a href="https://github.com/nehakolambe" target="_blank">More Projects ??</a></h5>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col-lg-6">
-
-          <h3 class="resume-title">Projects</h3>
-          <div class="resume-item">
-            <h4>Pharmacy Management System</h4>
-            <h5>02/2020 - 04/2020</h5>
-            <p><em>PHP, HTML, CSS</em></p>
-            <p>
-              <ul>
-                <li><a href="https://github.com/nehakolambe/PharmaManagementSystem" target="_blank">View Project</a></li>
-                <li>Automates the existing system of manually maintaining the records and bills</li>
-                <li>Worked on the front end and admin, pharmacists, and cashier module</li>
-              </ul>
-            </p>
-          </div>
-          <div class="resume-item">
-            <h4>Ludo Game</h4>
-            <h5>09/2020 - 10/2020</h5>
-            <p><em>Python, SQL, HTML, CSS</em></p>
-            <p>
-              <ul>
-                <li><a href="https://github.com/nehakolambe/ludogame" target="_blank">View Project</a></li>
-                <li>A multiplayer game implemented using socket programming that stores each move of the player and saves the details of each game</li>
-                <li>Worked on designing the database using MongoDB</li>
-              </ul>
-            </p>
-          </div>
-          <div class="resume-item">
-            <h4>Student Management System</h4>
-            <h5>12/2019 - 01/2020</h5>
-            <p><em>Python, SQL</em></p>
-            <p>
-              <ul>
-                <li><a href="https://github.com/nehakolambe/student-management-system" target="_blank">View Project</a></li>
-                <li>Keep records of Students and their marks</li>
-                <li>Used Data Science for some data extraction and visualizations</li>
-              </ul>
-            </p>
-          </div>
-        </div>
-        <div class="col-lg-6">
-
-          <h3 class="resume-title">Publications</h3>
-          <div class="resume-item">
-            <h4>Detection of Mental Disorder on Social Platform</h4>
-            <h5>February 2022</h5>
-            <p><em>7th International Conference on Computing in Engineering & Technology</em></p>
-            <p>
-            <ul>
-              <li><a href="https://github.com/nehakolambe/Detection-of-Mental-Disorders-on-Social-Platform" target="_blank">View Project</a></li>
-              <li><a href="https://digital-library.theiet.org/content/conferences/10.1049/icp.2022.0612" target="_blank">View Publication</a></li>
-              <li>A system created to detect symptoms of a mental disorder using tweets.</li>
-              <li>Crafted a questionnaire to help individuals gain clarity about their mental space.</li>
-              <li>Used TWINT, LSTM, VADER Analysis.</li>
-            </ul>
-            </p>
-          </div>
-          <div class="resume-item">
-            <h4>Farming Made Easy using Machine Learning</h4>
-            <h5>May 2021</h5>
-            <p><em>2nd International Conference for Emerging Technology</em></p>
-            <p>
-            <ul>
-              <li><a href="https://github.com/nehakolambe/Farming_Made_Easy" target="_blank">View Project</a></li>
-              <li><a href="https://ieeexplore.ieee.org/document/9456351" target="_blank">View Publication</a></li>
-              <li>A complete package for farmers helping them in making predictions about the price of the harvest weather and giving valuable information to farmers. </li>
-              <li>Used Decision Tree Regression, Multilinear Regression, APIs, Socket Programming</li>
-            </ul>
-            </p>
-          </div>
-
-          <h3 class="resume-title">Hackathon</h3>
-          <div class="resume-item">
-            <h4>Early Warning System</h4>
-            <h5>13/02/21 - 14/02/21</h5>
-            <p><em>SPIT, Mumbai</em></p>
-            <p>
-            <ul>
-              <li><a href="https://github.com/nehakolambe/SPIT_Hackathon_21" target="_blank">View Project</a></li>
-              <li>Task was to build a weather-based alert for weather-sensitive patients and pill dosage reminders & current dosage count.</li>
-              <li>Worked on providing future weather information to help weather-sensitive patients and provided a google map for locating nearby hospitals</li>
-            </ul>
-            </p>
-          </div>
-
-        </div>
-      </div>
-
-    </div>
-  </section><!-- End Project Section -->
-
-
-  <!-- ======= Contact Section ======= -->
-  <section id="contact" class="contact">
-    <div class="container">
-
-      <div class="section-title">
-        <h2>Contact</h2>
-        <p>Contact Me</p>
-      </div>
-
-      <div class="row mt-2">
-
-        <div class="col-md-6 d-flex align-items-stretch">
-          <div class="info-box">
-            <i class="bx bx-map"></i>
-            <h3>Address</h3>
-            <p>Mumbai, IN</p>
-          </div>
-        </div>
-
-        <div class="col-md-6 mt-4 mt-md-0 d-flex align-items-stretch">
-          <div class="info-box">
-            <i class="bx bx-share-alt"></i>
-            <h3>Social Profiles</h3>
-            <div class="social-links">
-              <a href="mailto: kolambe.neha36@gmail.com" target="_blank" class="envelope"><i class="bi bi-envelope"></i></a>
-              <a href="https://www.linkedin.com/in/nehakolambe/" target="_blank" class="linkedin"><i class="bi bi-linkedin"></i></a>
-              <a href="https://github.com/nehakolambe" target="_blank" class="github"><i class="bi bi-github"></i></a>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-6 mt-4 d-flex align-items-stretch">
-          <div class="info-box">
-            <i class="bx bx-envelope"></i>
-            <h3>Email</h3>
-            <p>kolambe.neha36@gmail.com</p>
-          </div>
-        </div>
-        <div class="col-md-6 mt-4 d-flex align-items-stretch">
-          <div class="info-box">
-            <i class="bx bx-phone-call"></i>
-            <h3>Phone</h3>
-            <p>+91 7506838795</p>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </section><!-- End Contact Section -->
-
-  <!-- Vendor JS Files -->
-  <script src="assets/vendor/purecounter/purecounter.js"></script>
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
-
-  <!-- Template Main JS File -->
-  <script src="assets/js/main.js"></script>
-
+                // Update active class
+                navLinks.forEach(nav => nav.classList.remove('active'));
+                link.classList.add('active');
+            });
+        });
+    </script>
 </body>
 
 </html>
