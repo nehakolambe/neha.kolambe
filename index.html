@@ -18,6 +18,7 @@
         <!-- Navbar -->
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container-fluid">
+                <a id="navbarBrand" class="navbar-brand d-none" href="#about" data-section="about">Neha Kolambe</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                     aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -84,6 +85,15 @@
         // Function to load content dynamically
         async function loadContent(section) {
             const contentDiv = document.getElementById('content');
+            const navbarBrand = document.getElementById('navbarBrand');
+
+            // Toggle visibility of brand name
+            if (section === 'about') {
+                navbarBrand.classList.add('d-none');
+            } else {
+                navbarBrand.classList.remove('d-none');
+            }
+
             try {
                 const response = await fetch(`${section}.html`);
                 if (!response.ok) throw new Error('Failed to load section');
@@ -99,15 +109,20 @@
 
         // Handle navigation link clicks
         const navLinks = document.querySelectorAll('.nav-link[data-section]');
-        navLinks.forEach(link => {
+        const brandLink = document.getElementById('navbarBrand');
+        const allSectionLinks = [...navLinks, brandLink];
+
+        allSectionLinks.forEach(link => {
             link.addEventListener('click', (e) => {
                 e.preventDefault();
                 const section = link.getAttribute('data-section');
                 loadContent(section);
 
-                // Update active class
+                // Update active class for nav links only
                 navLinks.forEach(nav => nav.classList.remove('active'));
-                link.classList.add('active');
+                if (link.classList.contains('nav-link')) {
+                    link.classList.add('active');
+                }
             });
         });
     </script>
