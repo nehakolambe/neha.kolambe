@@ -1,0 +1,60 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Light mode */
+body[data-theme="light"] {
+  background-color: #f8f9fa;
+  color: #212529;
+}
+
+/* Dark mode */
+body[data-theme="dark"] {
+  background-color: #121212;
+  color: #e0e0e0;
+}
+
+/* Title */
+h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+/* Contact info */
+.contact-info p {
+  margin: 5px 0;
+  font-size: 1.1rem;
+}
+
+.contact-info a {
+  text-decoration: none;
+  color: #007bff;
+}
+
+.contact-info a:hover {
+  text-decoration: underline;
+}
+
+/* Social links */
+.social-links-container {
+  text-align: left;
+}
+
+.social-links a {
+  font-size: 2rem;
+  margin-right: 15px;
+  color: inherit;
+  transition: color 0.3s;
+}
+
+.social-links a:hover {
+  color: #007bff;
+}
+
+/* Dark mode link hover */
+body[data-theme="dark"] .social-links a:hover {
+  color: #66b2ff;
+}

@@ -1,0 +1,20 @@
+.pdf-embed {
+  border: 1px solid #e0e0e0;
+  border-radius: .5rem;
+  overflow: hidden;
+  background: #fff;
+  margin-bottom: 1rem;
+}
+
+/* Embedded PDF responsive sizing */
+.pdf-embed iframe {
+  width: 100%;
+  height: 80vh;
+  border: 0;
+}
+
+/* Dark theme support */
+body[data-theme="dark"] .pdf-embed {
+  border-color: #444;
+  background: #171717;
+}

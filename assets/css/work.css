@@ -1,142 +1,143 @@
-/* General Body Styling */
+/* ============ Base ============ */
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
 /* Light Mode */
 body[data-theme="light"] {
-    background-color: #f8f9fa;
-    color: #212529;
+  background-color: #f8f9fa;
+  color: #212529;
 }
 
-/* Dark Mode */
+/* Dark Mode (high-contrast) */
 body[data-theme="dark"] {
-    background-color: #121212;
-    color: #e0e0e0;
+  background-color: #121212;
+  color: #eaeaea; /* brighter than before for legibility */
 }
 
-/* Page Title Styling */
+/* Headings */
 h1 {
-    font-size: 2.5rem;
-    font-weight: bold;
-    margin-bottom: 20px;
-    transition: color 0.3s ease;
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  transition: color 0.3s ease;
 }
 
-/* Light Mode Title */
-body[data-theme="light"] h1 {
-    color: #000000;
-}
+/* Light / Dark title colors */
+body[data-theme="light"] h1 { color: #000; }
+body[data-theme="dark"]  h1 { color: #fff; }
 
-/* Dark Mode Title */
-body[data-theme="dark"] h1 {
-    color: #ffffff;
-}
-
-/* Accordion Styling */
+/* ============ Accordion ============ */
 .accordion-item {
-    border: 1px solid;
-    border-radius: 8px;
-    margin-bottom: 15px;
-    box-shadow: none;
-    background-color: transparent;
-    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  box-shadow: none;
+  background-color: transparent;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease, background-color 0.2s ease;
 }
 
-/* Light Mode Accordion */
-body[data-theme="light"] .accordion-item {
-    border-color: #ddd;
-}
+/* Borders per theme */
+body[data-theme="light"] .accordion-item { border-color: #ddd; }
+body[data-theme="dark"]  .accordion-item { border-color: #3a3f47; }
 
-/* Dark Mode Accordion */
-body[data-theme="dark"] .accordion-item {
-    border-color: #555555;
-}
-
-/* Persistent Blue Outline for Selected or Expanded Accordion */
+/* Keep your blue outline for expanded/focused items */
 .accordion-item:focus-within,
 .accordion-item .accordion-button:not(.collapsed) {
-    border-color: #007bff; /* Blue border */
-    box-shadow: 0 0 0 4px rgba(0, 123, 255, 0.3); /* Blue outline glow */
+  border-color: #0d6efd;
+  box-shadow: 0 0 0 4px rgba(13, 110, 253, 0.3);
 }
 
-/* Accordion Header Styling */
+/* Header wrapper */
 .accordion-header {
-    font-size: 1.2rem;
-    font-weight: bold;
-    background-color: transparent; /* Remove header background */
-    transition: color 0.3s ease, background-color 0.3s ease;
+  font-size: 1.2rem;
+  font-weight: bold;
+  background-color: transparent;
+  transition: color 0.3s ease, background-color 0.2s ease;
 }
 
-/* Light Mode Header */
-body[data-theme="light"] .accordion-header {
-    color: #000000;
-}
+/* Header text colors */
+body[data-theme="light"] .accordion-header { color: #000; }
+body[data-theme="dark"]  .accordion-header { color: #fff; }
 
-/* Dark Mode Header */
-body[data-theme="dark"] .accordion-header {
-    color: #ffffff;
-}
-
-/* Accordion Button Styling */
+/* Button: strip default bg, inherit color */
 .accordion-button {
-    font-size: 1rem;
-    font-weight: bold;
-    background-color: transparent !important; /* Explicitly remove background */
-    color: inherit;
-    border: none;
-    transition: background-color 0.3s ease, color 0.3s ease;
-    outline: none; /* Remove default outline */
+  font-size: 1rem;
+  font-weight: bold;
+  background-color: transparent !important;
+  color: inherit;
+  border: none;
+  transition: background-color 0.2s ease, color 0.2s ease;
+  outline: none;
 }
 
-/* Keep Blue Outline Visible When Focused */
+/* Blue glow on keyboard focus */
 .accordion-button:focus {
-    outline: none;
-    box-shadow: 0 0 0 4px rgba(0, 123, 255, 0.3); /* Blue outline glow for focus */
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(13, 110, 253, 0.3);
 }
 
-/* Light Mode Button */
-body[data-theme="light"] .accordion-button {
-    color: #212529;
+/* Button text colors */
+body[data-theme="light"] .accordion-button { color: #212529; }
+body[data-theme="dark"]  .accordion-button { color: #f1f3f5; } /* brighter */
+
+/* Hover states (subtle, but visible) */
+body[data-theme="light"] .accordion-button:hover {
+  background-color: rgba(0, 0, 0, 0.05) !important;
+}
+body[data-theme="dark"] .accordion-button:hover {
+  background-color: rgba(255, 255, 255, 0.06) !important;
 }
 
-/* Dark Mode Button */
-body[data-theme="dark"] .accordion-button {
-    color: #e0e0e0;
-}
-
-/* Hover and Active States */
-.accordion-button:hover {
-    background-color: rgba(0, 0, 0, 0.05);
-}
-
-/* Light Mode Active */
+/* Active (expanded) button colors */
 body[data-theme="light"] .accordion-button:not(.collapsed) {
-    color: #444444;
+  color: #343a40;
+  background-color: rgba(0, 0, 0, 0.03) !important;
 }
-
-/* Dark Mode Active */
 body[data-theme="dark"] .accordion-button:not(.collapsed) {
-    color: #cccccc;
+  color: #ffffff; /* pure white for contrast */
+  background-color: rgba(255, 255, 255, 0.08) !important;
 }
 
-/* Accordion Body Styling */
+/* Body content */
 .accordion-body {
-    font-size: 0.95rem;
-    line-height: 1.6;
-    padding: 15px;
-    transition: color 0.3s ease;
-    background-color: transparent;
+  font-size: 0.95rem;
+  line-height: 1.7;
+  padding: 15px;
+  background-color: transparent;
+  transition: color 0.2s ease;
 }
 
-/* Light Mode Body */
-body[data-theme="light"] .accordion-body {
-    color: #333333;
+/* Body text colors */
+body[data-theme="light"] .accordion-body { color: #333; }
+body[data-theme="dark"]  .accordion-body { color: #e6e6e6; } /* brighter */
+
+/* Ensure <strong> and <p> remain readable in dark mode */
+body[data-theme="dark"] .accordion-body strong { color: #ffffff; }
+body[data-theme="dark"] .accordion-body p      { color: #e6e6e6; }
+
+/* Optional: stronger list color in dark for readability */
+body[data-theme="dark"] .accordion-body li { color: #e6e6e6; }
+
+/* ============ Bootstrap 5 Accordion Variables (Dark) ============ */
+/* These help tame Bootstrap’s defaults that can fight your styling */
+body[data-theme="dark"] {
+  --bs-accordion-color:            #eaeaea;
+  --bs-accordion-bg:               transparent;
+  --bs-accordion-border-color:     #3a3f47;
+  --bs-accordion-btn-color:        #f1f3f5;
+  --bs-accordion-btn-bg:           transparent;
+  --bs-accordion-active-color:     #ffffff;
+  --bs-accordion-active-bg:        rgba(255, 255, 255, 0.08);
+  --bs-accordion-btn-focus-border-color: #0d6efd;
+  --bs-accordion-btn-focus-box-shadow: 0 0 0 4px rgba(13, 110, 253, 0.3);
+  --bs-accordion-body-padding-x:   1rem;
+  --bs-accordion-body-padding-y:   1rem;
 }
 
-/* Dark Mode Body */
-body[data-theme="dark"] .accordion-body {
-    color: #d3d3d3;
+/* Icons inherit color correctly */
+body[data-theme="dark"] .accordion-button::after {
+  filter: invert(0.9); /* makes the chevron light */
 }

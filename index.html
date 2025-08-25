@@ -2,130 +2,197 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio - Neha Kolambe</title>
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Font Awesome CSS -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="assets/css/index.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio - Neha Kolambe</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <!-- Font Awesome CSS -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet" />
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="assets/css/index.css" />
 </head>
 
 <body data-theme="light">
-    <div class="wrapper">
-        <!-- Navbar -->
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <div class="container-fluid">
-                <a id="navbarBrand" class="navbar-brand d-none" href="#about" data-section="about">Neha Kolambe</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav ms-auto">
-                        <li class="nav-item">
-                            <a class="nav-link active" href="#about" data-section="about">About</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#skills" data-section="skills">What I'm good at</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#work" data-section="work">My Work</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#publications" data-section="publications">Publications</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#projects" data-section="projects">Projects</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="assets/resume/Neha_Kolambe_Resume.pdf" target="_self">Resume</a>
-                        </li> 
-                        <!-- <li class="nav-item">
-                            <a class="nav-link" href="papers/Detection_of_mental_disorder_on_social_platform.pdf" target="_self">CV</a>
-                        </li>                         -->
-                        <li class="nav-item">
-                            <button id="themeSwitcher" class="theme-icon nav-link">
-                                <i id="themeIcon" class="fas fa-moon"></i>
-                            </button>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
+  <div class="wrapper">
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+      <div class="container-fluid">
+        <a id="navbarBrand" class="navbar-brand d-none" href="#about">Neha Kolambe</a>
 
-        <!-- Content -->
-        <div class="container content" id="content">
-            <!-- Dynamic content will be loaded here -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link active" href="#about">About</a></li>
+            <li class="nav-item"><a class="nav-link" href="#education">Education</a></li>
+            <li class="nav-item"><a class="nav-link" href="#skills">What I'm good at</a></li>
+            <li class="nav-item"><a class="nav-link" href="#work">My Work</a></li>
+            <li class="nav-item"><a class="nav-link" href="#publications">Publications</a></li>
+            <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+            <li class="nav-item"><a class="nav-link" href="#resume">Resume</a></li>
+            <li class="nav-item"><a class="nav-link" href="#cv">CV</a></li>
+            <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+            <li class="nav-item">
+              <button id="themeSwitcher" class="theme-icon nav-link">
+                <i id="themeIcon" class="fas fa-moon"></i>
+              </button>
+            </li>
+          </ul>
         </div>
+      </div>
+    </nav>
 
-        <!-- Footer -->
-        <footer>
-            &copy; Copyright 2025 Neha Kolambe. Last updated: June 15, 2025.
-        </footer>
-    </div>
+    <!-- Single-page Content (each section loads its own HTML file) -->
+    <main class="container content" id="main">
+      <section id="about"></section>
+      <section id="education"></section>
+      <section id="skills"></section>
+      <section id="work"></section>
+      <section id="publications"></section>
+      <section id="projects"></section>
+      <section id="resume"></section>
+      <section id="cv"></section>
+      <section id="contact"></section>
+    </main>
 
-    <!-- Bootstrap Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-        const themeSwitcher = document.getElementById('themeSwitcher');
-        const themeIcon = document.getElementById('themeIcon');
-        const body = document.body;
+    <!-- Footer -->
+    <footer>
+      &copy; Copyright 2025 Neha Kolambe. Last updated: August 22, 2025.
+    </footer>
+  </div>
 
-        // Theme toggle functionality
-        themeSwitcher.addEventListener('click', () => {
-            const currentTheme = body.getAttribute('data-theme');
-            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
-            body.setAttribute('data-theme', newTheme);
-            themeIcon.className = newTheme === 'light' ? 'fas fa-moon' : 'fas fa-sun';
+  <!-- Bootstrap Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    // ---------- THEME ----------
+    const themeSwitcher = document.getElementById('themeSwitcher');
+    const themeIcon = document.getElementById('themeIcon');
+    const body = document.body;
+    themeSwitcher.addEventListener('click', () => {
+      const currentTheme = body.getAttribute('data-theme') || 'light';
+      const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+      body.setAttribute('data-theme', newTheme);
+      themeIcon.className = newTheme === 'light' ? 'fas fa-moon' : 'fas fa-sun';
+    });
+
+    // ---------- LOAD ALL SECTIONS ONCE ----------
+    const SECTION_IDS = ['about','education','skills','work','publications','projects','resume','cv','contact'];
+
+    // add a stylesheet into <head> once
+    function ensureStylesheet(href) {
+      const head = document.head;
+      const exists = [...head.querySelectorAll('link[rel="stylesheet"]')].some(l => {
+        // supports relative paths: compare endsWith to avoid absolute URL issues
+        try { return l.href.endsWith(href); } catch { return false; }
+      });
+      if (!exists) {
+        const link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.href = href;
+        link.setAttribute('data-section-css', 'true');
+        head.appendChild(link);
+      }
+    }
+
+    async function injectSection(id) {
+      const el = document.getElementById(id);
+      if (!el) return;
+      try {
+        const res = await fetch(`${id}.html`, { cache: 'no-cache' });
+        if (!res.ok) throw new Error(`${id}.html failed (${res.status})`);
+        const html = await res.text();
+
+        // Parse fetched HTML to pull in its CSS and inner content
+        const doc = new DOMParser().parseFromString(html, 'text/html');
+
+        // attach any <link rel="stylesheet"> found in the section file
+        doc.querySelectorAll('link[rel="stylesheet"][href]').forEach(link => {
+          const href = link.getAttribute('href');
+          if (href) ensureStylesheet(href);
         });
 
-        // Function to load content dynamically
-        async function loadContent(section) {
-            const contentDiv = document.getElementById('content');
-            const navbarBrand = document.getElementById('navbarBrand');
+        // Use the section's .container if present; else body content
+        const container = doc.querySelector('.container') || doc.body;
+        el.innerHTML = container ? container.innerHTML : html;
+      } catch (e) {
+        console.error(e);
+        el.innerHTML = `<div class="alert alert-warning mb-0">Could not load <strong>${id}.html</strong></div>`;
+      }
+    }
 
-            // Toggle visibility of brand name
-            if (section === 'about') {
-                navbarBrand.classList.add('d-none');
-            } else {
-                navbarBrand.classList.remove('d-none');
-            }
+    async function loadAllSections() {
+      await Promise.all(SECTION_IDS.map(injectSection));
+      if (location.hash) {
+        setTimeout(() => scrollToHash(location.hash), 50);
+      }
+      setActiveFromScroll();
+    }
+    loadAllSections();
 
-            try {
-                const response = await fetch(`${section}.html`);
-                if (!response.ok) throw new Error('Failed to load section');
-                const html = await response.text();
-                contentDiv.innerHTML = html;
-            } catch (error) {
-                contentDiv.innerHTML = `<p>Error loading content: ${error.message}</p>`;
-            }
+    // ---------- SMOOTH SCROLL + MOBILE COLLAPSE ----------
+    const nav = document.querySelector('.navbar');
+    const NAV_HEIGHT = () => (nav?.offsetHeight || 0);
+
+    function scrollToHash(hash) {
+      const target = document.querySelector(hash);
+      if (!target) return;
+      const y = target.getBoundingClientRect().top + window.scrollY - NAV_HEIGHT() + 6;
+      window.scrollTo({ top: y, behavior: 'smooth' });
+    }
+
+    document.querySelectorAll('.nav-link[href^="#"]').forEach(link => {
+      link.addEventListener('click', (e) => {
+        const hash = link.getAttribute('href');
+        if (hash && hash.startsWith('#')) {
+          e.preventDefault();
+          scrollToHash(hash);
+          history.pushState(null, '', hash);
+          // Collapse nav on mobile
+          const collapseEl = document.getElementById('navbarNav');
+          const instance = bootstrap.Collapse.getInstance(collapseEl) ||
+            new bootstrap.Collapse(collapseEl, { toggle: false });
+          instance.hide();
         }
+      });
+    });
 
-        // Load the default section (About)
-        loadContent('about');
+    // ---------- ACTIVE LINK (scrollspy: nearest-to-top wins) ----------
+    const navLinks = Array.from(document.querySelectorAll('.nav-link[href^="#"]'));
+    function setActiveFromScroll() {
+      const offset = NAV_HEIGHT() + 8;
+      let bestId = null;
+      let bestScore = Infinity;
 
-        // Handle navigation link clicks
-        const navLinks = document.querySelectorAll('.nav-link[data-section]');
-        const brandLink = document.getElementById('navbarBrand');
-        const allSectionLinks = [...navLinks, brandLink];
+      SECTION_IDS.forEach(id => {
+        const el = document.getElementById(id);
+        if (!el) return;
+        const rect = el.getBoundingClientRect();
+        const dist = Math.abs(rect.top - offset);
+        const aboveTop = rect.top - offset <= 0;
+        const score = (aboveTop ? 0 : 10000) + dist; // prefer sections at/above top
+        if (score < bestScore) {
+          bestScore = score;
+          bestId = id;
+        }
+      });
 
-        allSectionLinks.forEach(link => {
-            link.addEventListener('click', (e) => {
-                e.preventDefault();
-                const section = link.getAttribute('data-section');
-                loadContent(section);
+      if (!bestId) return;
+      navLinks.forEach(a => a.classList.toggle('active', a.getAttribute('href') === `#${bestId}`));
+      const navbarBrand = document.getElementById('navbarBrand');
+      if (bestId === 'about') navbarBrand.classList.add('d-none');
+      else navbarBrand.classList.remove('d-none');
+    }
 
-                // Update active class for nav links only
-                navLinks.forEach(nav => nav.classList.remove('active'));
-                if (link.classList.contains('nav-link')) {
-                    link.classList.add('active');
-                }
-            });
-        });
-    </script>
+    window.addEventListener('scroll', setActiveFromScroll, { passive: true });
+    window.addEventListener('resize', setActiveFromScroll);
+    document.addEventListener('DOMContentLoaded', setActiveFromScroll);
+    window.addEventListener('hashchange', () => scrollToHash(location.hash));
+  </script>
 </body>
 
 </html>
